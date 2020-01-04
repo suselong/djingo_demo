@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cal LIST</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>value_a</th>
+        <th>value_b</th>
+        <th>result</th>
+    </tr>
+    </thead>
+    {% for d in data %}
+        <tr>
+            <td>{{ d.value_a }}</td>
+            <td>{{ d.value_b }}</td>
+            <td>{{ d.result }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<form action="/del/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="清理">
+</form>
+</body>
+</html>
